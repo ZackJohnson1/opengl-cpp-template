@@ -1,29 +1,31 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "g++.exe - Build and debug active file",
+            "name": "g++ - Build and debug active file",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/myprogram.exe",
+            "program": "${workspaceFolder}/myprogram",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],
             "externalConsole": false,
-            "MIMode": "gdb",
-            "miDebuggerPath": "C:\\Program Files (x86)\\mingw-w64\\i686-8.1.0-posix-dwarf-rt_v6-rev0\\mingw32\\bin\\gdb.exe",
+            "MIMode": "lldb",
             "setupCommands": [
                 {
-                    "description": "Enable pretty-printing for gdb",
-                    "text": "-enable-pretty-printing",
+                    "description": "Enable pretty-printing for lldb",
+                    "text": "settings set target.pretty-printing on",
                     "ignoreFailures": true
                 }
             ],
-            "preLaunchTask": "C/C++: g++.exe build active file"
+            "preLaunchTask": "C/C++: g++ build active file",
+            "logging": {
+                "engineLogging": true,
+                "traceResponse": true,
+                "programOutput": true,
+                "exceptions": true
+            }
         }
     ]
 }
